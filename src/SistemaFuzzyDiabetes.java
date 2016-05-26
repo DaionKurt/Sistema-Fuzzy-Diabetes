@@ -14,22 +14,19 @@ public class SistemaFuzzyDiabetes {
 	private static ArrayList<String> condiciones = new ArrayList<>();
 	
 	public static void inicializar(){
-		for(int i=0,j=conjuntosCondicionDiabetico.length;i<j;i++){
+		for(int i=0,j=conjuntosCondicionDiabetico.length;i<j;i++)
 			condiciones.add(conjuntosCondicionDiabetico[i]);
-		}
 	}
 	private static int posNivMemMay(double [] nivsMem){
 		int posMay=0;
-		for(int i=0;i<nivsMem.length;i++){
+		for(int i=0;i<nivsMem.length;i++)
 			if (nivsMem[i]>nivsMem[posMay]) posMay=i;
-		}
 		return posMay;
 	}
 	public static void muestraNivMemMay(String msg, double [] nivsMem){    
 		System.out.print(msg+": [");
-		for(int i=0;i<nivsMem.length;i++){
+		for(int i=0;i<nivsMem.length;i++)
 			System.out.print(nivsMem[i]+(i+1==nivsMem.length?"]":", "));
-		}
 		System.out.println();
 	}
 	private static void prodMembsEdad(double datoNitidoEdad){
@@ -229,12 +226,9 @@ public class SistemaFuzzyDiabetes {
 		case "Pre-diabético":return nivMemCondicion*66;
 		case "Diabético":return nivMemCondicion*100;
 		}
-		return 0.0;
+		return 0;
 	}
 	public static double[] getNivsMemCondicionDiabetico() {
 		return nivsMemCondicionDiabetico;
-	}
-	public static void main(String[] args) {
-		
 	}
 }
